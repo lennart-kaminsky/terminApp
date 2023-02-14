@@ -9,6 +9,7 @@ Für die Implementierung der App gab es viele Vorgaben bzgl.
 - Projektstruktur, Modularisierung, Allgemeine Anfoderungen
 - Fachobjekte, Persistenz und Fachlogik
 - Seiten und Funktionen der Web-Anwendung
+
 (Veröffentlichung der exakten Aufgabenstellung nicht gestattet)
 
 Einige Umsetzungen oder Implementierungen scheinen nicht die optimalsten Lösungen zu sein, sind allerdings der Aufgabenstellung und den Vorgaben geschuldet. 

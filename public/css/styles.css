@@ -1,0 +1,123 @@
+/* Universalselektoren */
+*{font-family: Tahoma, Arial, sans-serif;}
+
+/* Überschriften */
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+h2, h3, h4 { text-align: center; }
+
+/* href */
+[href] {
+    color: black;
+    text-decoration: none;
+}
+
+nav [href] { color: white;}
+
+nav [href]:hover { letter-spacing: 0.1em; }
+
+a[href]:hover {
+    color: rgb(228, 201, 112, 0.836);
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0px; 
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: rgb(228, 201, 112, 0.836);
+}
+
+/* Navigationsbereich */
+nav {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(10, 15, 19, 0.836);
+}
+
+nav a {margin: 10px;}
+
+/* Body */
+body {
+    margin: 0;
+    background-color: rgb(250, 248, 241);
+}
+
+/* Main */
+main { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 20px 0px;
+}
+
+/* Footer */
+footer {
+    position: sticky;
+    bottom: 13px;
+    margin-left: 20px;
+    color: rgb(58, 58, 59);
+}
+
+/* Formulare */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+fieldset {
+    border-width: 0px 0px 0px 0px;
+    background-color: rgb(131, 147, 151);
+    margin: 20px 20px; 
+} 
+
+legend {
+    padding: 5px;
+    background-color: rgb(228, 201, 112, 0.836);
+} 
+
+label { padding: 5px; } 
+
+[type="submit"] {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 0px 60px 20px;
+    background-color: rgb(228, 201, 112, 0.836);
+}
+
+/* bestehende Abstimmungen */
+.terminuebersicht {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: rgb(131, 147, 151);
+}
+
+/* Ab einer Viewportbreite von weniger als 768px soll aus gestalterischen Gründen
+bereits die Überschrift im Header verschwinden (ca. ab Displaygröße von Tablets). */
+@media screen and (max-width: 768px) {
+    h1 {display: none;}
+}
+
+/* Breakpoint für kleine Geräte ab einer Bildschirmweite von weniger als 480 Pixel
+(zum Beispiel Smartphones). */
+@media screen and (max-width: 480px) {
+    header {
+        position: static;
+        justify-content: center;
+        background-color: rgb(250, 248, 241);
+    }
+    
+    nav { justify-content: center; }
+}

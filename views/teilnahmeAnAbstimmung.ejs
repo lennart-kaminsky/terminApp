@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Teilnahme an <%= getAbstimmungZuTCode.name %> </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    </head>
+    <body>
+        <%- include("includes/header.ejs") %>
+        <%- include("includes/nav.ejs") %>
+        <main>
+            <h2>Teilnahme an <%= getAbstimmungZuTCode.name %></h2>
+            <form method="post">
+                <fieldset>
+                    <legend>Name</legend>
+                    <input type="text" name="nameStudent" id="nameStudent" required>
+                </fieldset>
+                <% let zahl = 1; %>
+                <% for (let term of getAbstimmungZuTCode.termine) { %>
+                    <fieldset>
+                        <legend><%= term.id %></legend>
+                        <p>Datum: <%= term.datum %></p>
+                        <p>Start: <%= term.start %></p>
+                        <p>Ende: <%= term.ende %></p>
+                        <input type="radio" name=<%= "term" + zahl %> value="Ja" checked required>Ja <br>
+                        <input type="radio" name=<%= "term" + zahl %> value="Vielleicht">Vielleicht <br>
+                        <input type="radio" name=<%= "term" + zahl %> value="Nein">Nein <br>
+                    </fieldset>
+                    <% zahl++; %>
+                <% } %>
+                <input type="submit" value="Abstimmen!">
+            </form>
+        </main>
+        <%- include("includes/footer.ejs") %>        
+    </body>
+</html>

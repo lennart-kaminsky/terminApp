@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Neue Abstimmung erstellen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    </head>
+    <body>
+        <%- include("includes/header.ejs") %>
+        <%- include("includes/nav.ejs") %>
+        <main>
+            <h2>Neue Abstimmung erstellen</h2>
+            <form method="post" id="formularAbst">
+                <fieldset>
+                    <legend>Informationen</legend>
+                    <p>
+                        <label for="nameAbst">Name:</label>
+                        <input type="text" name="nameAbst" id="nameAbst" minlength="3" maxlength="100" required>
+                    </p>
+                    <p>
+                        <label for="beschreibung">Beschreibung:</label>
+                        <textarea name="beschreibung" id="beschreibung"></textarea>
+                    </p>
+                    <p>
+                        <label for="anzT">Anzahl der Termine:</label>
+                        <input type="number" name="anzT" id="anzT" min="2" step="1" value="2">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Termin 1</legend>
+                    <label for="datum1">Datum:</label>
+                    <input type="date" name="datum1" id="datum1" required>
+                    <label for="start1">Start:</label>
+                    <input type="time" name="start1" id="start1" required>
+                    <label for="ende1">Ende:</label>
+                    <input type="time" name="ende1" id="ende1" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Termin 2</legend>
+                    <label for="datum2">Datum:</label>
+                    <input type="date" name="datum2" id="datum2" required>
+                    <label for="start2">Start:</label>
+                    <input type="time" name="start2" id="start2" required>
+                    <label for="ende2">Ende:</label>
+                    <input type="time" name="ende2" id="ende2" required>
+                </fieldset>
+                <!-- Leeres div, welches mittels JS mit mehreren Fieldsets für Termine erstetzt werden kann -->
+                <div id="ersetzen"></div>
+                <input type="submit" value="Abstimmung erstellen">
+            </form>
+            <script src="/js/formular.js"></script>   
+        </main>
+        <%- include("includes/footer.ejs") %>        
+    </body>
+</html>

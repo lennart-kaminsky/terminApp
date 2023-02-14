@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Startseite</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/grid.css">
+        <link rel="stylesheet" type="text/css" href="/css/kacheln.css">
+    </head>
+    <body>
+        <%- include("includes/header.ejs") %>
+        <%- include("includes/nav.ejs") %>
+        <main>
+            <h2>Startseite - Was wollen sie tun?</h2>
+            <!-- Dieses div dient als Flexbox-Container, um die Ansicht der einzelnen
+            Kacheln anzupassen. -->
+            <div id="kachelcontainer">
+                <!-- Die 3 folgenden Divs dienen der Gestaltung der einzelnen Kacheln mittels CSS -->
+                <div class="kachel">
+                    <a href="/neueAbstimmung">Neue Abstimmung erstellen</a>
+                </div>
+                <div class="kachel">
+                    <h3>An Abstimmung teilnehmen</h3>
+                    <form method="get" action="/teilnahmeAnAbstimmung">
+                        <fieldset>
+                            <label for="tcodeInput">Teilnehmercode:</label>
+                            <input name="tcodeInput" type="text">
+                        </fieldset>
+                        <input type="submit" value="Los!">
+                    </form>
+                </div>
+                <div class="kachel">
+                    <h3>Bestehende Abstimmung betrachten</h3>
+                    <form method="get" action="/bestehendeAbstimmungen">
+                        <fieldset>
+                            <label for="acodeInput">Administratorcode:</label>
+                            <input name="acodeInput" type="text">
+                        </fieldset>
+                        <input type="submit" value="Los!">
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("includes/footer.ejs") %>      
+    </body>
+</html>

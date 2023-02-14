@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Stimmen zu <%= getAbstimmungZuACode.name %></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/grid.css">
+    </head>
+    <body>
+        <%- include("includes/header.ejs") %>
+        <%- include("includes/nav.ejs") %>
+        <main>
+            <h2>Agbegebene Stimmen für <%= getAbstimmungZuACode.name %> </h2>
+            <h3>Beschreibung</h3>
+            <p><%= getAbstimmungZuACode.beschreibung %></p>
+            <% let zahl = 1; %>
+            <% for (let term of getAbstimmungZuACode.termine) { %>
+                <section class="terminuebersicht">
+                    <h3>Termin <%= zahl %></h3>
+                    <ul>
+                        <li>Datum: <%= term.datum %></li>
+                        <li>Start: <%= term.start %></li>
+                        <li>Ende: <%= term.ende %></li>
+                    </ul>
+                    <h4>Abgegebene Stimmen</h4>
+                    <ul>
+                        <% for (let elem of term.stimmen) { %>
+                            <li><%= elem.name %>: <%= elem.option %></li>
+                        <% }; %>
+                    </ul>
+                </section>
+                <% zahl++; %>
+            <% } %>
+        </main>
+        <%- include("includes/footer.ejs") %>        
+    </body>
+</html>

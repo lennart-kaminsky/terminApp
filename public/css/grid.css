@@ -1,0 +1,25 @@
+body {
+    display: grid;
+    grid-template-areas:    "kopf navi"
+                            "haupt haupt"
+                            "fuss fuss";
+    grid-template-columns: 30% auto;
+}
+
+/* Breakpoint für kleine Geräte ab einer Bildschirmweite von weniger als 480 Pixel
+(zum Beispiel Smartphones). */
+@media screen and (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-areas:    "kopf"
+                                "navi"
+                                "haupt"
+                                "fuss";
+        grid-template-columns: auto;
+    }
+}
+
+header {grid-area: kopf;}
+nav {grid-area: navi;}
+main {grid-area: haupt;}
+footer {grid-area: fuss;}
